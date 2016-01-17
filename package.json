@@ -1,0 +1,44 @@
+{
+  "name": "party-games-microservice",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Microservice to manage party games",
+  "author": {
+    "name": "Retruc Labs",
+    "email": "admin@retruclabs.com",
+    "url": "http://retruclabs.com"
+  },
+  "homepage": "http://www.retruclabs.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RetrucLabs/charades-movie"
+  },
+  "main": "service.js",
+  "dependencies": {
+    "express": "4.x.x",
+    "morgan": "1.x.x",
+    "body-parser": "1.x.x",
+    "cookie-parser": "1.x.x",
+    "method-override": "2.x.x",
+    "winston": "2.x.x",
+    "underscore": "1.x.x",
+    "validator": "4.x.x"
+  },
+  "devDependencies": {
+    "chai": "3.3.0",
+    "chai-as-promised": "5.1.0",
+    "coveralls": "^2.11.6",
+    "mocha": "2.3.3",
+    "mocha-lcov-reporter": "^1.0.0",
+    "should": "4.6.x",
+    "sinon": "1.17.1",
+    "sinon-chai": "2.8.0",
+    "supertest": "1.1.0",
+    "istanbul": "0.x.x"
+  },
+  "scripts": {
+    "start": "node service.js",
+    "test": "mocha",
+    "test-travis": "./node_modules/.bin/istanbul cover --report lcovonly ./node_modules/.bin/_mocha && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  }
+}
