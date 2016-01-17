@@ -66,7 +66,7 @@ server.loadGames = function(){
     var gameUrl = config.gameMicroservices[gameUrlId]+'/description';
     request(gameUrl, function (error, response, body) {
       if (!error && response.statusCode == 200) {
-        config.gameAboutList.push(body);
+        config.gameAboutList.push(JSON.parse(body));
       }else{
         console.log('Error loading gameInfo from: '+gameUrl);
       }
