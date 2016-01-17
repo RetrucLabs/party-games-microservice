@@ -15,7 +15,7 @@ function getRoot(req, res) {
 }
 
 function getGamesAvailable(req, res) {
-  res.status(200).send(config.gameAboutList);
+  res.status(200).json(config.gameAboutList);
 }
 
 
