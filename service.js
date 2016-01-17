@@ -10,6 +10,9 @@ var config          = require('./config/config');
 
 var server = module.exports = this;
 
+var request = require('request');
+
+
 server.setupNetworkConfig = function() {
   server.port = config.server.port;
   server.ip = config.server.ip;
@@ -58,5 +61,19 @@ server.start = function() {
   });
 };
 
+server.loadGames = function(){
+  for(var gameUrlId in config.gameMicroservices){
+    var gameUrl = config.gameMicroservices[gameUrlId]+'/description';
+    request(gameUrl, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        config.gameAboutList.push(body);
+      }else{
+        console.log('Error loading gameInfo from: '+gameUrl);
+      }
+    });
+  }
+};
+
 server.setup();
+server.loadGames();
 server.start();
