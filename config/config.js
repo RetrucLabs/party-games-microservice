@@ -5,7 +5,7 @@ module.exports = {
     ip: process.env.IP || '0.0.0.0',
   },
   //List of microservices that offer games
-  gameMicroservices: ['http://charades-movie-master-01-1.retruclabs.cont.tutum.io:8042/'],
+  gameMicroservices: ['http://charades-movie-master-01-1.retruclabs.cont.tutum.io:8042'],
 
   gameAboutList :[],
 
